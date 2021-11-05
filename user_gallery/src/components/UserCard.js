@@ -43,9 +43,9 @@ export default function UserCard({ name, id, username, email, location }) {
             </a>
           </div>
           <div className="px-5">
-            <Link to={albumUrl} className="text-lg font-bold">
+            <a href={albumUrl} className="text-lg font-bold">
               {name}
-            </Link>
+            </a>
 
             <div className="flex text-gray-400 text-sm space-x-2">
               <div className="flex ">
