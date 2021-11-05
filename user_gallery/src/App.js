@@ -1,11 +1,8 @@
-import logo from "./logo.svg"
-import "./App.css"
-import UserCard from "./components/UserCard"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import React, { useState, useEffect } from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import AlbumPage from "./components/AlbumPage"
 import UserPage from "./components/UserPage"
 import Navbar from "./components/Navbar"
+import PhotoPage from "./components/PhotoPage"
 function App() {
   return (
     <div>
@@ -16,6 +13,10 @@ function App() {
             <Route
               path="/album/:user/:id"
               render={(props) => <AlbumPage {...props} />}
+            />
+            <Route
+              path="/album/:albumId"
+              render={(props) => <PhotoPage {...props} />}
             />
             <Route path="/" component={UserPage} />
           </Switch>

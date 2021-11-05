@@ -1,6 +1,6 @@
-import React from "react"
 import { useState, useEffect } from "react"
 import UserCard from "./UserCard"
+
 export default function UserPage() {
   const [userData, setUserData] = useState([])
   const getUserDatafetch = async () => {

@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import AlbumPage from "./AlbumPage"
+import { Link, BrowserRouter as Router } from "react-router-dom"
+
 export default function UserCard({ name, id, username, email, location }) {
   const mailto = "mailto:" + email
   const [albumData, setalbumData] = useState([])
@@ -14,6 +14,7 @@ export default function UserCard({ name, id, username, email, location }) {
   useEffect(() => {
     getAlbumsData()
   }, [])
+
   const albumUrl = "/album/" + username + "/" + id
   const NumberOfAlbums = albumData.length
   return (
@@ -42,9 +43,9 @@ export default function UserCard({ name, id, username, email, location }) {
             </a>
           </div>
           <div className="px-5">
-            <a href={albumUrl} className="text-lg font-bold">
+            <Link to={albumUrl} className="text-lg font-bold">
               {name}
-            </a>
+            </Link>
 
             <div className="flex text-gray-400 text-sm space-x-2">
               <div className="flex ">
